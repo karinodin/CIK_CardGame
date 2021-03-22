@@ -8,16 +8,16 @@ namespace ChicagoCardGame
 
     public class CardDeck : IDeckOfCards
     {
-        private List<Card> Cards { get; set; }
+        private List<Card> _cards;
 
         public CardDeck()
         {
-            Cards = new List<Card>();
+            _cards = new List<Card>();
             foreach (Suit suit in Enum.GetValues(typeof(Suit)))
             {
                 for (var i = 1; i <= 13; i++)
                 {
-                    Cards.Add(new Card
+                    _cards.Add(new Card
                     {
                         Suit = suit,
                         Value = i
@@ -28,12 +28,12 @@ namespace ChicagoCardGame
 
         public void Shuffle()
         {
-            Cards = Cards.OrderBy(x => Guid.NewGuid()).ToList();
+            _cards = _cards.OrderBy(x => Guid.NewGuid()).ToList();
         }
 
         public List<Card> DrawHand(int numberOfCards)
         {
-            return Cards.Take(numberOfCards).ToList();
+            return _cards.Take(numberOfCards).ToList();
         }
     }
 }

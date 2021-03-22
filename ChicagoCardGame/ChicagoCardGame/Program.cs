@@ -17,8 +17,6 @@ namespace ChicagoCardGame
 
             var game = new Game(cardsInHand, straightFlushRule);
 
-            game.PlayGame();
-
             var stopwatch = Stopwatch.StartNew();
             var tries = game.PlayGame();
             var elapsedTotalSeconds = stopwatch.Elapsed.TotalSeconds;

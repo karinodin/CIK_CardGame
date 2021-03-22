@@ -4,7 +4,7 @@ namespace ChicagoCardGame
 {
     public interface IDeckOfCards
     {
-        public void Shuffle();
-        public List<Card> DrawHand(int cardsInHand);
+        void Shuffle();
+        List<Card> DrawHand(int cardsInHand);
     }
 }

@@ -6,8 +6,8 @@ namespace ChicagoCardGame
 {
     public class Game
     {
-        private readonly int _cardsInHand;
-        private readonly List<IRule> _rules;
+        private int _cardsInHand;
+        private List<IRule> _rules;
 
         public Game(int cardsInHand, List<IRule> rules)
         {
